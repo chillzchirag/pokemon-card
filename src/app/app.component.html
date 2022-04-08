@@ -1,5 +1,5 @@
 <div class="container">
-  <div id="card">
+  <div id="card" [ngStyle]="setMyStyle()">
     <p class="hp">
       <span>HP</span>
       {{hp}}
@@ -7,6 +7,7 @@
     <img src={{imgSrc}} />
     <h2 class="poke-name">{{pokemonName}}</h2>
     <div class="types">
+      <span *ngFor = "let item of types" [ngStyle]="getStyle()">{{item.type.name}}</span>
     </div>
     <div class="stats">
       <div>
